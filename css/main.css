@@ -400,3 +400,8 @@ video {
 	}
 }
 
+
+svg.octicon {
+	opacity: 1;
+  margin-bottom: -5px;
+}
