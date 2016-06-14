@@ -268,14 +268,18 @@ video {
 
 @media screen and (max-width: 1600px) {
 	#gum-local {
-    margin-top: -15em;
+    margin-top: -13em;
 	}
 	div#container {
-    margin-top: -65%;
-		font-size: 250%;
+    margin-top: -59%;
+    font-size: 150%;
+	}
+	p.description {
+		font-size: 50%;
+		margin-top: -1em;
 	}
 	p.copy {
-		margin-top: 40%;
+		margin-top: 39%;
 	}
 }
 
