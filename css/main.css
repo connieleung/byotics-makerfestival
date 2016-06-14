@@ -280,6 +280,7 @@ video {
 	}
 	p.copy {
 		margin-top: 41%;
+		font-size: 45%;
 	}
 }
 
@@ -400,6 +401,11 @@ video {
 	}
 }
 
+
+span.hashtagB {
+	font-family: 'Futura'; 
+	color: rgba(128,128,128,0.59);
+}
 
 svg.octicon {
   margin-bottom: -5px;
