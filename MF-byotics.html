@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+ *  Copyright (c) 2015 The WebRTC project authors. All Rights Reserved.
+ *
+ *  Use of this source code is governed by a BSD-style license
+ *  that can be found in the LICENSE file in the root of the source
+ *  tree.
+-->
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description" content="WebRTC code samples">
+  <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
+  <!-- meta itemprop="description" content="Client-side WebRTC code samples">
+  <meta itemprop="image" content="../../../images/webrtc-icon-192x192.png">
+  <meta itemprop="name" content="WebRTC code samples" -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta id="theme-color" name="theme-color" content="#ffffff">
+
+  <base target="_blank">
+
+  <title>Byotics: Maker Festival Toronto 2016</title>
+
+  <link rel="icon" sizes="192x192" href="../../../images/webrtc-icon-192x192.png">
+  <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/main.css">
+
+	<style>
+		#gum-local {
+			position: relative;
+			/*margin-top: -21.75em;*/
+
+			/* Preserve aspet ratio */
+			/*min-width: 100%;
+			min-height: 100%;*/
+		}
+
+		
+	</style>
+	
+</head>
+
+<body>
+	
+	<video id="gum-local" autoplay></video>
+
+    <div id="errorMsg"></div>
+
+  <div id="container">
+
+    <h1><strong>Byotics</strong></h1>
+		
+	  <p class="description">A <a href="http://makerfestival.ca/events/hacking-biology-and-computing/" title="Maker Festival Toronto 2016">Maker Festival</a> x <a href="https://www.facebook.com/events/1317393211623405/" title="LabT.O. Co-Working">LabTO</a> showcase on biology & computer science hacking
+		</p>
+		
+		<p class="copy">&copy; 2016 <a href="https://de.linkedin.com/hiconnie" title="Linkedin">Connie Leung</a> | <a href="https://codelabs.developers.google.com/codelabs/webrtc-web">Byotics</a></p>
+
+  </div>
+
+	<!-- browser retrofitting -->
+  <script src="https://webrtc.github.io/samples/src/js/adapter.js"></script>
+	
+	<!-- window performance -->
+  <script src="https://webrtc.github.io/samples/src/js/common.js"></script>
+	
+	<!-- browser defining constraints -->
+  <script src="https://webrtc.github.io/samples/src/content/getusermedia/gum/js/main.js"></script>
+	
+	<script>
+	var elem = document.getElementById("gum-local");
+		if (elem.requestFullscreen) {
+			elem.requestFullscreen();
+		}
+	</script>
+
+</body>
+</html>
