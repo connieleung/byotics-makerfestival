@@ -1,0 +1,93 @@
+div.orb.gum-local {
+	width: ;
+	height: ;
+	margin: ;
+	border: 1px solid pink;
+}
+
+canvas.dimension {
+	/*width: 640px;
+	height: 480px;
+	margin-top:60%;*/
+	border: 1px solid aqua;
+	z-index: 1000;
+}
+
+
+.alert {
+    padding: 8px 35px 8px 14px;
+    margin-bottom: 20px;
+    color: #c09853;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    background-color: #fcf8e3;
+    border: 1px solid #fbeed5;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.alert-danger, .alert-error {
+    color: #b94a48;
+    background-color: #f2dede;
+    border-color: #eed3d7;
+}
+
+
+/* JSFeat CV Controller */
+/* see source: https://inspirit.github.io/jsfeat/js/dat.gui.min.js */
+/*.dg {
+    color: rgba(101, 99, 99, 0.99);
+    text-transform: uppercase;
+    font: 11px 'Futura', sans-serif;
+    font-size: 75%;
+    letter-spacing: 0.1em;
+font:11px 'font-family: 'Roboto', sans-serif;color:rgba(101,99,99,1);text-transform:uppercase;letter-spacing:0.1em
+}*/
+
+/*.dg.a {
+	width: 36em;
+	float: right;
+	bottom: 0;
+	overflow-x: hidden;
+	margin-top: 72%;
+}*/
+
+/*.dg.colortab {
+	width: 6px;
+	margin-left: -3px;
+	height: 140px;
+	cursor: ew-resize;
+	position: absolute;
+}*/
+
+/*.dg .cr.number {
+    border-left: 3px solid rgba(82, 169, 169, 0.99);
+}*/
+
+/*.dg li:not(.folder) {
+    background: rgba(128,128,128,0.3);
+    border-bottom: 1px solid rgba(128,128,128,0.3);
+	padding-right: 0.5em;
+	padding:0 4px 0 5px
+}*/
+
+	/* output number value */
+/*	.dg .cr.number input[type=text] {
+    color: rgb(93, 91, 91);
+    font: 11px 'Futura', sans-serif;
+    width: 3em;
+	}*/
+	/*.dg .c input[type=text] {
+    background: transparent;
+    outline: none;
+	}
+	.dg .c input[type=text] {
+	  margin-top: auto;
+	}*/
+
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+	background-color: transparent;
+  border: transparent;
+	-moz-box-shadow: transparent;
+	box-shadow: transparent;
+}
