@@ -59,10 +59,10 @@ div#links {
 }
 
 h1 {
-border-bottom: 1px solid #ccc;
+border-bottom: 1px dashed rgba(204,204,204,0.65);
 font-family: 'Roboto', sans-serif;
 font-weight: 500;
-margin: 0 0 0.5em 0;
+margin: 0 0 0.25em 0;
 padding: 0 0 0.2em 0;
 }
 
@@ -143,8 +143,9 @@ h1 span {
 h1.title {
 	font-size: -webkit-xxx-large;
   /*color: rgba(204,204,204,0.99);*/
-	color: rgba(97,61,198,0.99);
-	letter-spacing: 0.15em;
+	color: rgba(97,61,198,1);
+	letter-spacing: 0.05em;
+	font-weight: bold;
 }
 
 strong {
@@ -232,7 +233,8 @@ span.hashtagB {
 	font-family: 'Futura'; 
 	/*color: rgba(128,128,128,0.59);*/
 	color: rgba(102,102,102,0.99);
-	padding-right: 0.25em;
+	padding-right: 0.15em;
+	font-size: larger;
 }
 
 svg.octicon {
