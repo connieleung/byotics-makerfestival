@@ -97,7 +97,8 @@ p {
 }
 
 p.description {
-	color: rgba(240,255,255,0.65);
+	/*color: rgba(240,255,255,0.65);*/
+	color: rgba(82, 169, 169, 0.99);
 	letter-spacing: 0.1em;
 	font-size: 70%;
 	text-transform: uppercase;
@@ -106,7 +107,7 @@ p.description {
 p.copy {
 	font-size: 60%;
 	opacity: .5;
-	top: 95%;
+	top: 93%;
 	color: rgba(240,255,255,0.25);
 	text-transform: uppercase;
 	letter-spacing: 0.15em;
@@ -141,7 +142,9 @@ h1 span {
 
 h1.title {
 	font-size: -webkit-xxx-large;
-  color: rgba(204,204,204,0.99)
+  /*color: rgba(204,204,204,0.99);*/
+	color: rgba(97,61,198,0.99);
+	letter-spacing: 0.15em;
 }
 
 strong {
