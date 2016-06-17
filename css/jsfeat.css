@@ -16,8 +16,8 @@ canvas.dimension {
 
 .alert {
     padding: 8px 35px 8px 14px;
-    margin-top: -20%;/*-25%;*/
-	margin-left: 16%;
+    margin-top: -35.5%;/*-20%;*//*-25%;*/
+	margin-left: ;/*16%;*/
     color: rgba(240,255,255,0.5);
 		position: fixed;
 		font: 11px 'Roboto', sans-serif;
@@ -26,9 +26,11 @@ canvas.dimension {
 	padding-left: 3.25em;
 	text-transform: uppercase;
 	letter-spacing: 0.25em;
-	line-height: 1.85em;
+	line-height: 2em;/*1.85em;*/
 	z-index: 1000;
-	border: 0.5px dotted rgba(245,245,245,0.025;
+	border: 0.5px dotted rgba(245,245,245,0.035);
+	
+	width: 15%;
 }
 
 .alert-danger, .alert-error {
