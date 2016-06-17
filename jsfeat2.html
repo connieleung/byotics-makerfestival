@@ -96,7 +96,7 @@
     <script type="text/javascript" src="js/jsfeat/jsfeat-min.js"></script>
     <!--script type="text/javascript" src="js/jsfeat/jsfeat.js"></script-->
 		
-		<!-- script type="text/javascript" src="https://inspirit.github.io/jsfeat/js/frontalface.js"></script -->
+		<script type="text/javascript" src="https://inspirit.github.io/jsfeat/js/frontalface.js"></script>
 
 		<!-- browser compatibility: requestAnimationFrame -->
     <script type="text/javascript" src="https://inspirit.github.io/jsfeat/js/compatibility.js"></script>
@@ -173,11 +173,22 @@
             var img_u8, corners, img_gxgy;
 
             var demo_opt = function(){
+								// YAPE
                 this.lap_thres = 34; // 30
                 this.eigen_thres = 1; // 25
+							
+								// SCHARR
+								this.scharr_derivatives = true;
+							
+								// CANNY
+								this.blur_radius = 2;
+                this.low_threshold = 20;
+                this.high_threshold = 50;
+							
+								// HAAR
+								//this.equalize_histogram = true;
             }
-						
-  
+				
             function demo_app(videoWidth, videoHeight) {
                 canvasWidth  = canvas.width;
                 canvasHeight = canvas.height;
@@ -186,25 +197,43 @@
                 ctx.fillStyle = "rgb(0,255,0)";
                 ctx.strokeStyle = "rgb(0,255,0)";
 
+								// YAPE, SCHARR, HISTOGRAM, CANNY
                 img_u8 = new jsfeat.matrix_t(1320, 900, jsfeat.U8_t | jsfeat.C1_t | jsfeat.U8C1_t);
+							
+								// SCHARR
+								img_gxgy = new jsfeat.matrix_t(1320, 900, jsfeat.S32C2_t);
 
+								// YAPE
                 corners = [];
                 var i = 1320*900;
                 while(--i >= 0) {
                     corners[i] = new jsfeat.keypoint_t(0,0,0,0);
                 }
-							
-								img_gxgy = new jsfeat.matrix_t(1320, 900, jsfeat.S32C2_t);
 
                 options = new demo_opt();
                 gui = new dat.GUI();
 
+								// YAPE
                 gui.add(options, "lap_thres", 1, 100);
                 gui.add(options, "eigen_thres", 1, 100);
+							
+								// SCHARR
+								gui.add(options, "scharr_derivatives");
+							
+								// CANNY
+								gui.add(options, 'blur_radius', 0, 4).step(1);
+                gui.add(options, 'low_threshold', 1, 127).step(1);
+                gui.add(options, 'high_threshold', 1, 127).step(1);
+							
+								// HAAR
+                //gui.add(options, "equalize_histogram");
 
-                stat.add("grayscale");
-                stat.add("box blur");
-								stat.add("scharr");
+                stat.add("grayscale"); // YAPE, SCHARR
+                stat.add("box blur"); // YAPE
+								stat.add("scharr"); // Computer gradient
+								//stat.add("equalize histogram"); // brightness and increases the contrast
+                stat.add("gauss blur"); // CANNY
+                stat.add("canny edge"); // CANNY
                 stat.add("yape06");
             }
 
@@ -212,20 +241,38 @@
                 compatibility.requestAnimationFrame(tick);
                 stat.new_frame();
                 if (video.readyState === video.HAVE_ENOUGH_DATA) {
+										// YAPE
                     ctx.drawImage(video, 0, 0, 1320, 900);
                     var imageData = ctx.getImageData(0, 0, 1320, 900);
-
-                    stat.start("grayscale");
+										
+										stat.start("grayscale");
                     jsfeat.imgproc.grayscale(imageData.data, 1320, 900, img_u8);
                     stat.stop("grayscale");
 
                     stat.start("box blur");
-                    jsfeat.imgproc.box_blur_gray(img_u8, img_u8, 2, 0);
+                    jsfeat.imgproc.box_blur_gray(img_u8, img_u8, 2, 20); // 2, 0);
                     stat.stop("box blur");
 									
 										stat.start("scharr");
 										jsfeat.imgproc.scharr_derivatives(img_u8, img_gxgy);
 										stat.stop("scharr");
+									
+										//stat.start("equalize histogram");
+                    //jsfeat.imgproc.equalize_histogram(img_u8, img_u8);
+                    //stat.stop("equalize histogram");
+									
+										// CANNY
+										var r = options.blur_radius|0;
+                    var kernel_size = (r+1) << 1;
+									
+										// CANNY
+										stat.start("gauss blur");
+                    jsfeat.imgproc.gaussian_blur(img_u8, img_u8, kernel_size, 0);
+                    stat.stop("gauss blur");
+
+                    stat.start("canny edge");
+                    jsfeat.imgproc.canny(img_u8, img_u8, options.low_threshold|0, options.high_threshold|0);
+                    stat.stop("canny edge");
 
                     jsfeat.yape06.laplacian_threshold = options.lap_thres|0;
                     jsfeat.yape06.min_eigen_value_threshold = options.eigen_thres|0;
@@ -233,7 +280,8 @@
                     stat.start("yape06");
                     var count = jsfeat.yape06.detect(img_u8, corners);
                     stat.stop("yape06");
-
+									
+									
                     // render result back to canvas
 									
 										// SCHARR
@@ -247,6 +295,15 @@
                         data_u32[i] = (pix << 24) | (gx << 16) | (0 << 8) | gy;
                     }
 									
+										// HISTOGRAM, CANNY
+                    //var data_u32 = new Uint32Array(imageData.data.buffer);
+                    var alpha = (0xff << 24);
+                    var i = img_u8.cols*img_u8.rows, pix = 0;
+                    while(--i >= 0) {
+                        pix = img_u8.data[i];
+                        data_u32[i] = alpha | (pix << 16) | (pix << 8) | pix;
+                    }
+									
 										// YAPE06
                     //var data_u32 = new Uint32Array(imageData.data.buffer);
                     render_corners(corners, count, data_u32, 1320);
@@ -256,7 +313,8 @@
                     $('#log').html(stat.log());
                 }
             }
-
+				
+						// YAPE
             function render_corners(corners, count, img, step) {
                 var pix = (0xff << 24) | (0x00 << 16) | (0xff << 8) | 0x00;
                 for(var i=0; i < count; ++i)
