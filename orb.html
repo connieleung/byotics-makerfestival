@@ -39,17 +39,17 @@
 				<!-- FULLSCREEN BACKGROUND CAMERA VIDEO -->
 				<!-- webrtc camera -->
 				<!-- video id="gum-local" autoplay class="fullscreen-bg_video" poster="assets/img/ParameciumFeeding.gif"-->
-				<video id="webcam" autoplay class="fullscreen-bg_video" poster="assets/img/ParameciumFeeding.gif">
+				<video id="webcam" autoplay poster="assets/img/ParameciumFeeding.gif">
 					
 					<!-- CANVAS -->
-					<div class="orb gum-local" width="640" height="480">
+					<div class="orb gum-local" >
 							
-							<canvas id="canvas" class="dimension" width="640" height="480"></canvas>
+							<canvas id="canvas" class="dimension" width="1320" height="900"></canvas>
 							<div id="no_rtc" class="alert alert-error" style="display:none;"></div>
 							<div id="log" class="alert alert-info"></div>
 					</div>
 					
-					<!-- Not visible on Chrome -->
+					<!-- Not visible on Chrome class="fullscreen-bg_video" -->
 					<!-- source src="assets/vid/microscope-ggj01.mp4" type="video/mp4">
 					<source src="assets/vid/microscope-ggj01.ogv" type="video/ogg">
 					<source src="assets/vid/microscope-ggj01.webm" type="video/webm"-->
@@ -106,9 +106,9 @@
 		<!-- JSFeat Particle Control Panel: .dg -->
 		<script type="text/javascript" src="js/jsfeat/dat.gui.min.js"></script>
 
-		<script type="text/javascript" src="js/jsfeat/jsfeat_orb.js"></script>
+		<!-- script type="text/javascript" src="js/jsfeat/jsfeat_orb.js"></script>
 		<script type="text/javascript" src="js/jsfeat/jsfeat_haar.js"></script>
-		<script type="text/javascript" src="js/jsfeat/jsfeat_yape06.js"></script>
+		<script type="text/javascript" src="js/jsfeat/jsfeat_yape06.js"></script-->
 		
 		<script>
 			
@@ -136,7 +136,7 @@
                             attempts++;
                             setTimeout(findVideoSize, 200);
                         } else {
-                            onDimensionsReady(640, 480);
+                            onDimensionsReady(1320, 900);
                         }
                     }
                 };
@@ -285,9 +285,9 @@
                 ctx.fillStyle = "rgb(0,255,0)";
                 ctx.strokeStyle = "rgb(0,255,0)";
 
-                img_u8 = new jsfeat.matrix_t(640, 480, jsfeat.U8_t | jsfeat.C1_t);
+                img_u8 = new jsfeat.matrix_t(1320, 900, jsfeat.U8_t | jsfeat.C1_t);
                 // after blur
-                img_u8_smooth = new jsfeat.matrix_t(640, 480, jsfeat.U8_t | jsfeat.C1_t);
+                img_u8_smooth = new jsfeat.matrix_t(1320, 900, jsfeat.U8_t | jsfeat.C1_t);
                 // we wll limit to 500 strongest points
                 screen_descriptors = new jsfeat.matrix_t(32, 500, jsfeat.U8_t | jsfeat.C1_t);
                 pattern_descriptors = [];
@@ -296,7 +296,7 @@
                 pattern_corners = [];
                 matches = [];
 
-                var i = 640*480;
+                var i = 1320*900;
                 while(--i >= 0) {
                     screen_corners[i] = new jsfeat.keypoint_t(0,0,0,0,-1);
                     matches[i] = new match_t();
@@ -326,11 +326,11 @@
                 compatibility.requestAnimationFrame(tick);
                 stat.new_frame();
                 if (video.readyState === video.HAVE_ENOUGH_DATA) {
-                    ctx.drawImage(video, 0, 0, 640, 480);
-                    var imageData = ctx.getImageData(0, 0, 640, 480);
+                    ctx.drawImage(video, 0, 0, 1320, 900);
+                    var imageData = ctx.getImageData(0, 0, 1320, 900);
 
                     stat.start("grayscale");
-                    jsfeat.imgproc.grayscale(imageData.data, 640, 480, img_u8);
+                    jsfeat.imgproc.grayscale(imageData.data, 1320, 900, img_u8);
                     stat.stop("grayscale");
 
                     stat.start("gauss blur");
@@ -350,13 +350,13 @@
 
                     // render result back to canvas
                     var data_u32 = new Uint32Array(imageData.data.buffer);
-                    render_corners(screen_corners, num_corners, data_u32, 640);
+                    render_corners(screen_corners, num_corners, data_u32, 1320);
 
                     // render pattern and matches
                     var num_matches = 0;
                     var good_matches = 0;
                     if(pattern_preview) {
-                        render_mono_image(pattern_preview.data, data_u32, pattern_preview.cols, pattern_preview.rows, 640);
+                        render_mono_image(pattern_preview.data, data_u32, pattern_preview.cols, pattern_preview.rows, 1320);
                         stat.start("matching");
                         num_matches = match_pattern();
                         good_matches = find_transform(matches, num_matches);
