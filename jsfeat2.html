@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<!-- --------------------------------------------------
+* Copyright (c) 2016 Connie Leung
+* Please site or reference @HalloConnie
+* Layout source: http://codepen.io/halloconnie/pen/NNKMPM
+*
+* https://github.com/connieleung/
+* https://twitter.com/HalloConnie
+--------------------------------------------------- -->
+
+<html>
+	<head lang="en">
+		
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		
+		<meta name="description" content="Maker festival toronto 2016 byotics Connie Leung LabTO biohacking biology computer science material science javascript computer vision opencv">
+  	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
+		<meta name="mobile-web-app-capable" content="yes">
+
+		<base target="_blank">
+
+  	<title>Byotics: Maker Festival Toronto 2016</title>
+		
+		<link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
+		
+		<link rel="stylesheet" href="css/jsfeat-vid.css">
+		<link rel="stylesheet" href="css/jsfeat.css">
+		
+	</head>
+	
+  <body>
+
+		<!-- div class="page-wrapper" -->
+			
+			<div class="fullscreen-bg">
+				
+				<!-- FULLSCREEN BACKGROUND CAMERA VIDEO -->
+				<!-- webrtc camera -->
+				<video id="webcam" autoplay poster="assets/img/ParameciumFeeding.gif" style="display:none;"></video>
+            <div>
+								<!-- 
+								1920 x 1090 
+								width="1920" height="1300"
+								(width="1720" height="1300")
+								-->
+                <canvas id="canvas" width="1320" height="900"></canvas>
+							
+                <div id="no_rtc" class="alert alert-error" style="display:none;position:fixed;"></div>
+                <div id="log" class="alert alert-info"></div>
+            </div>
+				
+				
+					<!-- source src="assets/vid/microscope-ggj01.mp4" type="video/mp4">
+					<source src="assets/vid/microscope-ggj01.ogv" type="video/ogg">
+					<source src="assets/vid/microscope-ggj01.webm" type="video/webm"-->
+					
+				
+				<div id="errorMsg"></div>
+				
+    	</div>
+			
+			<div class="content">
+				<!-- Title -->
+				<h1 class="title"><strong><span class="hashtagB">#</span>Byotics</strong></h1>
+				
+        <!-- Description -->
+				<p class="description">A <a href="http://makerfestival.ca/events/hacking-biology-and-computing/" title="Maker Festival Toronto 2016" target="_blank">Maker Festival</a> x <a href="https://www.facebook.com/events/1317393211623405/" title="LabT.O. Co-Working" target="_blank">LabTO</a> showcase on biology & computer science hacking
+				</p>
+			
+				<!-- FOOTER -->
+				<footer>
+					<p class="copy">
+						&copy; 2016 <a href="https://ca.linkedin.com/in/hiconnie" title="Linkedin" target="_blank">Connie Leung</a> | <a href="https://github.com/connieleung/byotics-makerfestival" target="_blank">
+						<svg aria-hidden="true" class="octicon octicon-mark-github" height="24" version="1.1" viewBox="0 0 16 16" width="24"><path class="octicon" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+						</a>
+					</p>
+				</footer>
+			
+			</div>
+
+			
+		<!-- /div -->
+		
+		<!-- Got lazy saving the scripts locally. Message me on GitHub if they break -->
+		
+		<!-- browser retrofitting / RTCPeerConnection -->
+		<script type="text/javascript" src="https://webrtc.github.io/samples/src/js/adapter.js"></script>
+
+		<!-- window performance -->
+		<script type="text/javascript" src="https://webrtc.github.io/samples/src/js/common.js"></script>
+
+		<!-- JSFeat: JavaScript Computer Vision Library Scripts -->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		
+    <script type="text/javascript" src="js/jsfeat/jsfeat-min.js"></script>
+    <!--script type="text/javascript" src="js/jsfeat/jsfeat.js"></script-->
+		
+		<!-- script type="text/javascript" src="https://inspirit.github.io/jsfeat/js/frontalface.js"></script -->
+
+		<!-- browser compatibility: requestAnimationFrame -->
+    <script type="text/javascript" src="https://inspirit.github.io/jsfeat/js/compatibility.js"></script>
+		
+		<!-- frame rate counter and refresher - FPS? Control Panel -->
+		<script type="text/javascript" src="https://inspirit.github.io/jsfeat/js/profiler.js"></script>
+		
+		<!-- JSFeat Particle Control Panel: .dg -->
+		<script type="text/javascript" src="js/jsfeat/dat.gui.min.js"></script>
+		<!--script type="text/javascript" src="https://inspirit.github.io/jsfeat/js/dat.gui.min.js"></script -->
+		
+		<!--script type="text/javascript" src="js/jsfeat/jsfeat_orb.js"></script-->
+		<!-- script type="text/javascript" src="js/jsfeat/jsfeat_haar.js"></script -->
+		<!-- script type="text/javascript" src="js/jsfeat/jsfeat_yape06.js"></script -->
+		
+		<script>
+			$(window).load(function() {
+            "use strict";
+
+            // lets do some fun
+            var video = document.getElementById('webcam');
+            var canvas = document.getElementById('canvas');
+            try {
+                var attempts = 0;
+                var readyListener = function(event) {
+                    findVideoSize();
+                };
+                var findVideoSize = function() {
+                    if(video.videoWidth > 0 && video.videoHeight > 0) {
+                        video.removeEventListener('loadeddata', readyListener);
+                        onDimensionsReady(video.videoWidth, video.videoHeight);
+                    } else {
+                        if(attempts < 10) {
+                            attempts++;
+                            setTimeout(findVideoSize, 200);
+                        } else {
+                            onDimensionsReady(1320, 900);
+                        }
+                    }
+                };
+                var onDimensionsReady = function(width, height) {
+                    demo_app(width, height);
+                    compatibility.requestAnimationFrame(tick);
+                };
+
+                video.addEventListener('loadeddata', readyListener);
+
+                compatibility.getUserMedia({video: true}, function(stream) {
+                    try {
+                        video.src = compatibility.URL.createObjectURL(stream);
+                    } catch (error) {
+                        video.src = stream;
+                    }
+                    setTimeout(function() {
+                            video.play();
+                        }, 500);
+                }, function (error) {
+                    $('#canvas').hide();
+                    $('#log').hide();
+                    $('#no_rtc').html('<h4>WebRTC not available.</h4>');
+                    $('#no_rtc').show();
+                });
+            } catch (error) {
+                $('#canvas').hide();
+                $('#log').hide();
+                $('#no_rtc').html('<h4>Something goes wrong...</h4>');
+                $('#no_rtc').show();
+            }
+						// End of Webcam setup detection
+						
+            var stat = new profiler();
+
+            var gui,options,ctx,canvasWidth,canvasHeight;
+            var img_u8, corners;
+
+            var demo_opt = function(){
+                this.lap_thres = 34; // 30
+                this.eigen_thres = 1; // 25
+            }
+						
+  
+            function demo_app(videoWidth, videoHeight) {
+                canvasWidth  = canvas.width;
+                canvasHeight = canvas.height;
+                ctx = canvas.getContext('2d');
+
+                ctx.fillStyle = "rgb(0,255,0)";
+                ctx.strokeStyle = "rgb(0,255,0)";
+
+                img_u8 = new jsfeat.matrix_t(1320, 900, jsfeat.U8_t | jsfeat.C1_t);
+
+                corners = [];
+                var i = 1320*900;
+                while(--i >= 0) {
+                    corners[i] = new jsfeat.keypoint_t(0,0,0,0);
+                }
+
+                options = new demo_opt();
+                gui = new dat.GUI();
+
+                gui.add(options, "lap_thres", 1, 100);
+                gui.add(options, "eigen_thres", 1, 100);
+
+                stat.add("grayscale");
+                stat.add("box blur");
+                stat.add("yape06");
+            }
+
+            function tick() {
+                compatibility.requestAnimationFrame(tick);
+                stat.new_frame();
+                if (video.readyState === video.HAVE_ENOUGH_DATA) {
+                    ctx.drawImage(video, 0, 0, 1320, 900);
+                    var imageData = ctx.getImageData(0, 0, 1320, 900);
+
+                    stat.start("grayscale");
+                    jsfeat.imgproc.grayscale(imageData.data, 1320, 900, img_u8);
+                    stat.stop("grayscale");
+
+                    stat.start("box blur");
+                    jsfeat.imgproc.box_blur_gray(img_u8, img_u8, 2, 0);
+                    stat.stop("box blur");
+
+                    jsfeat.yape06.laplacian_threshold = options.lap_thres|0;
+                    jsfeat.yape06.min_eigen_value_threshold = options.eigen_thres|0;
+
+                    stat.start("yape06");
+                    var count = jsfeat.yape06.detect(img_u8, corners);
+                    stat.stop("yape06");
+
+                    // render result back to canvas
+                    var data_u32 = new Uint32Array(imageData.data.buffer);
+                    render_corners(corners, count, data_u32, 1320);
+
+                    ctx.putImageData(imageData, 0, 0);
+
+                    $('#log').html(stat.log());
+                }
+            }
+
+            function render_corners(corners, count, img, step) {
+                var pix = (0xff << 24) | (0x00 << 16) | (0xff << 8) | 0x00;
+                for(var i=0; i < count; ++i)
+                {
+                    var x = corners[i].x;
+                    var y = corners[i].y;
+                    var off = (x + y * step);
+                    img[off] = pix;
+                    img[off-1] = pix;
+                    img[off+1] = pix;
+                    img[off-step] = pix;
+                    img[off+step] = pix;
+                }
+            }
+
+            $(window).unload(function() {
+                video.pause();
+                video.src=null;
+            });
+        });
+		</script>
+			
+	</body>
+</html>
