@@ -1,10 +1,12 @@
-# Byotics
+![byotics header](https://raw.githubusercontent.com/mori-c/byotics-makerfestival/gh-pages/assets/img/byotics-ggc16.jpg)
+
+# [Byotics](https://github.com/mori-c/byotics)
 
 Contribution showcase to 2016's [MakerFestival](https://web.archive.org/web/20160610063857/http://makerfestival.ca/events/hacking-biology-and-computing/) Toronto. 
 
 <br>
 
-## Demos  <sup>[+](^+)</sup>
+## Demos  <sup>[+](#+)</sup>
 
 OpenCV proof-of-concepts integrating a [HAAR Classifier](https://mori-c.github.io/byotics-makerfestival/jsfeat.html) and [Dlib - CLM Face Detection](https://mori-c.github.io/byotics-makerfestival/index.html) model composed as a collection of miscellaneous algorithms in Machine Learning, Computer Vision, Image Processing, and Linear Algebra; enable browser camera API permission  request
 
@@ -76,6 +78,6 @@ Exhibited at [Lab T.O.](https://labto.com/)
 
 ---
 
-<a name="+">+</a> openCV version used is no longer maintained as there are better efficient frameworks available now. 
+<a name="+">+</a> - openCV version used is no longer maintained as there are better efficient frameworks available now. 
 
 
