@@ -1,14 +1,18 @@
-![byotics header](https://raw.githubusercontent.com/mori-c/byotics-makerfestival/gh-pages/assets/img/byotics-ggc16.jpg)
-
 # [Byotics](https://github.com/mori-c/byotics)
+
+
+![byotics header](https://raw.githubusercontent.com/mori-c/byotics-makerfestival/gh-pages/assets/img/byotics-ggc16.jpg)
 
 Contribution showcase to 2016's [MakerFestival](https://web.archive.org/web/20160610063857/http://makerfestival.ca/events/hacking-biology-and-computing/) Toronto. 
 
 <br>
 
-## Demos  <sup>[+](#+)</sup>
+# Demos  <sup>[+](#+)</sup>
 
-OpenCV proof-of-concepts integrating a [HAAR Classifier](https://mori-c.github.io/byotics-makerfestival/jsfeat.html) and [Dlib - CLM Face Detection](https://mori-c.github.io/byotics-makerfestival/index.html) model composed as a collection of miscellaneous algorithms in Machine Learning, Computer Vision, Image Processing, and Linear Algebra; enable browser camera API permission  request
+![Dlib and CLM Face Detection example](https://instagram.fybz1-1.fna.fbcdn.net/vp/86238c618cb021d561f6945764c8d86a/5D2AE3C7/t51.2885-15/e35/43063019_2138085716456605_9020266997681750016_n.jpg?_nc_ht=instagram.fybz1-1.fna.fbcdn.net)
+Dlib & CLM face detection visualized real-time output example
+
+OpenCV proof-of-concepts integrating a [HAAR Classifier](https://mori-c.github.io/byotics-makerfestival/jsfeat.html) and [Dlib & CLM Face Detection](https://mori-c.github.io/byotics-makerfestival/index.html) model composed as a collection of miscellaneous algorithms in Machine Learning, Computer Vision, Image Processing, and Linear Algebra; enable browser camera API permission  request
 
 <br>
 
@@ -29,24 +33,24 @@ Exhibited at [Lab T.O.](https://labto.com/)
 <br>
 <br>
 
-## Techstack
+# 💻 🎮 Stack
 
 <br>
 
-### Technologies
+## Technologies
 
 * augmented reality
 * generative adversarial networks
 * biocomputation
 * lab-on-a-chip
 
-### Languages
+## Languages
 
 * Java
 * C++
 * HTML / CSS
 
-### Libraries
+## Libraries
 
 * openCV JS
   * Brightess Binary Feature (BBF) - Object Detection
@@ -62,7 +66,7 @@ Exhibited at [Lab T.O.](https://labto.com/)
   * gab.opencv
   * video
 
-### Hardware
+## Hardware
 
 * Arduino Uno
 * XYZ Interactive ZX Gesture Sensor
