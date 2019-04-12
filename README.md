@@ -1,18 +1,21 @@
 # [Byotics](https://github.com/mori-c/byotics)
 
+Contribution showcase to 2016's [MakerFestival](https://web.archive.org/web/20160610063857/http://makerfestival.ca/events/hacking-biology-and-computing/) Toronto. 
 
 ![byotics header](https://raw.githubusercontent.com/mori-c/byotics-makerfestival/gh-pages/assets/img/byotics-ggc16.jpg)
 
-Contribution showcase to 2016's [MakerFestival](https://web.archive.org/web/20160610063857/http://makerfestival.ca/events/hacking-biology-and-computing/) Toronto. 
-
 <br>
 
-# Demos  <sup>[+](#+)</sup>
+# Proof-of-Concepts  <sup>[+](#+)</sup>
+
+OpenCV prototype linked integrat frameworks using [HAAR Classification](https://mori-c.github.io/byotics-makerfestival/jsfeat.html) and [Dlib & CLM Face Detection](https://mori-c.github.io/byotics-makerfestival/index.html) models  composed by a collection of miscellaneous Machine Learning, Computer Vision, Image Processing, and Linear Algebra algorithms.
+
+✅ Enable browser 📷 camera API request permission
+
 
 ![Dlib and CLM Face Detection example](https://instagram.fybz1-1.fna.fbcdn.net/vp/86238c618cb021d561f6945764c8d86a/5D2AE3C7/t51.2885-15/e35/43063019_2138085716456605_9020266997681750016_n.jpg?_nc_ht=instagram.fybz1-1.fna.fbcdn.net)
 Dlib & CLM face detection visualized real-time output example
 
-OpenCV proof-of-concepts integrating a [HAAR Classifier](https://mori-c.github.io/byotics-makerfestival/jsfeat.html) and [Dlib & CLM Face Detection](https://mori-c.github.io/byotics-makerfestival/index.html) model composed as a collection of miscellaneous algorithms in Machine Learning, Computer Vision, Image Processing, and Linear Algebra; enable browser camera API permission  request
 
 <br>
 
@@ -33,7 +36,7 @@ Exhibited at [Lab T.O.](https://labto.com/)
 <br>
 <br>
 
-# 💻 🎮 Stack
+# 💻 🎮  Stack
 
 <br>
 
@@ -44,27 +47,35 @@ Exhibited at [Lab T.O.](https://labto.com/)
 * biocomputation
 * lab-on-a-chip
 
+<br>
+
 ## Languages
 
 * Java
 * C++
-* HTML / CSS
+* HTML / CSS / JS
+
+<br>
 
 ## Libraries
 
-* openCV JS
-  * Brightess Binary Feature (BBF) - Object Detection
-  * Oriented FAST and Rotated BRIEF (ORB) - Object Orientation Alignment / Keypoint Detection
-  * Haar-cascade Detection Classifier
-  * CLM Trackr - Landmark Detection using nodes relative to tanhs
-  * Dlib Framework - Edge Detection using lines drawn between two nodes
+openCV
+
+* Brightess Binary Feature (BBF) - Object Detection
+* Oriented FAST and Rotated BRIEF (ORB) - Object Orientation Alignment / Keypoint Detection
+* Haar-cascade Detection Classifier
+* CLM Trackr - Landmark Detection using nodes relative to tanhs
+* Dlib Framework - Edge Detection using lines drawn between two nodes
   
-* Processing
-  * arm7
-  * controlP5
-  * java.awt.Rectangle
-  * gab.opencv
-  * video
+Processing
+
+* arm7
+* controlP5
+* java.awt.Rectangle
+* gab.opencv
+* video
+
+<br>
 
 ## Hardware
 
@@ -73,6 +84,10 @@ Exhibited at [Lab T.O.](https://labto.com/)
 * Logitic web camera
 
 
+<br>
+<br>
+<br>
+<br>
 <br>
 <br>
 <br>
