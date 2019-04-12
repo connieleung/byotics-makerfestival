@@ -3,7 +3,6 @@
 Contribution showcase to 2016's [MakerFestival](https://web.archive.org/web/20160610063857/http://makerfestival.ca/events/hacking-biology-and-computing/) Toronto. 
 
 <br>
-<br>
 
 # About
 
@@ -25,6 +24,46 @@ Exhibited at [Lab T.O.](https://labto.com/)
 ## Demos  <sup>[*](*)</sup>
 
 OpenCV with [HAAR](https://mori-c.github.io/byotics-makerfestival/jsfeat.html) and [Edge Detection](https://mori-c.github.io/byotics-makerfestival/index.html) algorithms, with camera permission request
+
+<br>
+
+## Techstack
+
+### Technologies
+
+* augmented reality
+* generative adversarial networks
+* biocomputation
+* lab-on-a-chip
+
+
+### Languages
+
+* Java
+* C++
+* HTML / CSS
+
+#### Libraries
+
+* openCV JS
+  * Brightess Binary Feature (BBF) - Object Detection
+  * Oriented FAST and Rotated BRIEF (ORB) - Object Orientation Alignment / Keypoint Detection
+  * Haar-cascade Detection Classifier
+  * CLM Trackr - Landmark Detection using nodes relative to tanhs
+  * Dlib Framework - Edge Detection using lines drawn between two nodes
+  
+* Processing
+  * arm7
+  * controlP5
+  * java.awt.Rectangle
+  * gab.opencv
+  * video
+
+### Hardware
+
+* Arduino Uno
+* XYZ Interactive ZX Gesture Sensor
+* Logitic web camera
 
 
 <br>
