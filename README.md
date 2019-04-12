@@ -4,6 +4,12 @@ Contribution showcase to 2016's [MakerFestival](https://web.archive.org/web/2016
 
 <br>
 
+## Demos  <sup>[+](^+)</sup>
+
+OpenCV with [HAAR](https://mori-c.github.io/byotics-makerfestival/jsfeat.html) and [Edge Detection](https://mori-c.github.io/byotics-makerfestival/index.html) algorithms, with camera permission request
+
+<br>
+
 # About
 
 Byotics was created at the 2016 Global Game Jam in Toronto, and it uses single-celled organisms to play the classic arcade game Pong. 
@@ -21,13 +27,9 @@ Exhibited at [Lab T.O.](https://labto.com/)
 <br>
 <br>
 
-## Demos  <sup>[*](*)</sup>
-
-OpenCV with [HAAR](https://mori-c.github.io/byotics-makerfestival/jsfeat.html) and [Edge Detection](https://mori-c.github.io/byotics-makerfestival/index.html) algorithms, with camera permission request
+## Techstack
 
 <br>
-
-## Techstack
 
 ### Technologies
 
@@ -36,14 +38,13 @@ OpenCV with [HAAR](https://mori-c.github.io/byotics-makerfestival/jsfeat.html) a
 * biocomputation
 * lab-on-a-chip
 
-
 ### Languages
 
 * Java
 * C++
 * HTML / CSS
 
-#### Libraries
+### Libraries
 
 * openCV JS
   * Brightess Binary Feature (BBF) - Object Detection
@@ -69,11 +70,12 @@ OpenCV with [HAAR](https://mori-c.github.io/byotics-makerfestival/jsfeat.html) a
 <br>
 <br>
 <br>
+<br>
 
 2016 - 2019 © Moric
 
 ---
 
-<a name="*">*</a> openCV version used is no longer maintained as there are better efficient frameworks available now. 
+<a name="+">+</a> openCV version used is no longer maintained as there are better efficient frameworks available now. 
 
 
