@@ -6,7 +6,7 @@ Contribution showcase to 2016's [MakerFestival](https://web.archive.org/web/2016
 
 ## Demos  <sup>[+](^+)</sup>
 
-OpenCV with [HAAR](https://mori-c.github.io/byotics-makerfestival/jsfeat.html) and [Edge Detection](https://mori-c.github.io/byotics-makerfestival/index.html) algorithms, with camera permission request
+OpenCV proof-of-concepts integrating a [HAAR Classifier](https://mori-c.github.io/byotics-makerfestival/jsfeat.html) and [Dlib - CLM Face Detection](https://mori-c.github.io/byotics-makerfestival/index.html) model composed as a collection of miscellaneous algorithms in Machine Learning, Computer Vision, Image Processing, and Linear Algebra; enable browser camera API permission  request
 
 <br>
 
