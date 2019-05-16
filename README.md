@@ -1,5 +1,8 @@
 # [Byotics](https://github.com/mori-c/byotics)
 
+Site: https://mori-c.github.io/byotics-makerfestival/index.html 
+OpenCV: https://mori-c.github.io/byotics
+
 Contribution showcase to 2016's [MakerFestival](https://web.archive.org/web/20160610063857/http://makerfestival.ca/events/hacking-biology-and-computing/) Toronto. 
 
 [![byotics header](https://raw.githubusercontent.com/mori-c/byotics-makerfestival/gh-pages/assets/img/byotics-ggc16.jpg)](https://github.com/mori-c/byotics)
