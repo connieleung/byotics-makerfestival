@@ -9,7 +9,7 @@
 
 # Proof-of-Concepts  <sup>[+](#+)</sup>
 
-OpenCV prototype linked integrat frameworks using [HAAR Classification](https://mori-c.github.io/byotics-makerfestival/jsfeat.html) and [Dlib & CLM Face Detection](https://mori-c.github.io/byotics-makerfestival/index.html) models  composed by a collection of miscellaneous Machine Learning, Computer Vision, Image Processing, and Linear Algebra algorithms.
+OpenCV prototype linked integrate frameworks using [HAAR Classification](https://mori-c.github.io/byotics-makerfestival/jsfeat.html) and [Dlib & CLM Face Detection](https://mori-c.github.io/byotics-makerfestival/index.html) models  composed by a collection of miscellaneous Machine Learning, Computer Vision, Image Processing, and Linear Algebra algorithms.
 
 <br>
 
